@@ -7,7 +7,6 @@ def existance_of_title(movies, myMovie):
             return movie
     return {}
 
-
 def get_recommend(movies, inputMovie):
     recommend = {}
     genres = [film['name'] for film in inputMovie['genres']]
@@ -16,7 +15,6 @@ def get_recommend(movies, inputMovie):
             genresFilm = [film['name'] for film in inputMovie['genres']]
             recommend[film['title']] = len(set(genres)&set(genresFilm)) * 10 + (10 - abs(film['vote_average'] - inputMovie['vote_average']))
     return recommend
-
 
 def get_collection(movies, inputMovie):
     collection = []
@@ -31,7 +29,6 @@ def get_collection(movies, inputMovie):
                 collection.append(film['title'])
     return collection
 
-
 def print_recommend(collection, recommend, inputMovie):
     if len(collection) < 20:
         iter = len(collection)
@@ -43,7 +40,7 @@ def print_recommend(collection, recommend, inputMovie):
                 return collection
     else:
         return collection
-
+    
 if __name__ == '__main__':
     with codecs.open('google.json', "r", encoding='utf-8') as f:
         movies = json.load(f)
