@@ -3,7 +3,7 @@ import urllib.parse
 import json
 
 if __name__ == '__main__':
-    api = '319d54c2728dc4563bde29d5c4466336'
+    api = input('Please input API key:')
     with open('google.json', 'w', encoding='utf-8') as f:
         movies = []
         id_of_film = 1
