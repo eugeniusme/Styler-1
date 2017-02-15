@@ -19,5 +19,5 @@ def make_tmdb_api_request(method, api_key, extra_params=None):
 
 if __name__ == '__main__':
     id_of_film = 215
-    api = '319d54c2728dc4563bde29d5c4466336'
+    api = input('Please input key') 
     print('Budget of Saw II:', (make_tmdb_api_request(method='/movie/' + str(id_of_film), api_key=api)['budget']))
